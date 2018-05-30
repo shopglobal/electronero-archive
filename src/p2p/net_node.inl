@@ -403,16 +403,16 @@ namespace nodetool
     }
     else
     { 
-      full_addrs.insert("159.203.28.200:22080");
-      full_addrs.insert("128.199.85.61:22080");
-      full_addrs.insert("46.101.40.29:22080");
-      full_addrs.insert("46.101.76.70:22080");
-      full_addrs.insert("104.236.175.63:22080");
-      full_addrs.insert("165.227.189.226:22080");
-      full_addrs.insert("138.68.175.185:22080");
-      full_addrs.insert("167.99.228.39:22080");
-      full_addrs.insert("144.202.59.175:22080");
-      full_addrs.insert("45.77.238.34:22080");
+      full_addrs.insert("159.203.28.200:20080");
+      full_addrs.insert("128.199.85.61:20080");
+      full_addrs.insert("46.101.40.29:20080");
+      full_addrs.insert("46.101.76.70:20080");
+      full_addrs.insert("104.236.175.63:20080");
+      full_addrs.insert("165.227.189.226:20080");
+      full_addrs.insert("138.68.175.185:20080");
+      full_addrs.insert("167.99.228.39:20080");
+      full_addrs.insert("144.202.59.175:20080");
+      full_addrs.insert("45.77.238.34:20080");
     }
     return full_addrs;
   }
@@ -504,7 +504,7 @@ namespace nodetool
         if (result.size())
         {
           for (const auto& addr_string : result)
-            full_addrs.insert(addr_string + ":22080");
+            full_addrs.insert(addr_string + ":20080");
         }
         ++i;
       }
