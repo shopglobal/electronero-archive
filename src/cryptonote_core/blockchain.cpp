@@ -766,7 +766,6 @@ difficulty_type Blockchain::get_difficulty_for_next_block()
   auto d_max = 100000;
   auto d_a = (d_min + (rand() % (int)(d_max - d_min + 1)));
   auto h_f_b = ELECTRONERO_HARDFORK;
-  auto h_f_b9 = 307063;
   auto t_h_f_b = TESTNET_ELECTRONERO_HARDFORK;
   auto s_h_f_b = STAGENET_ELECTRONERO_HARDFORK;
   auto h_f_n = MAINNET_HARDFORK_NETWORK;
@@ -841,7 +840,7 @@ difficulty_type Blockchain::get_difficulty_for_next_block()
     return (difficulty_type) ((uint64_t)(h_f_n)); 
   } 
   // Reset network hashrate to 16.3 MHz when MAINNET hardfork v9 comes
-  if ((uint64_t)bc_h >= h_f_b9 && (uint64_t)bc_h <= h_f_v9 + (uint64_t)h_f_d_w)
+  if ((uint64_t)bc_h >= h_f_v9 && (uint64_t)bc_h <= h_f_v9 + (uint64_t)h_f_d_w)
   {
 	  h_f_n9 += d_a;
     return (difficulty_type) ((uint64_t)(h_f_n9)); 
