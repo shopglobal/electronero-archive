@@ -59,12 +59,12 @@
 #undef MONERO_DEFAULT_LOG_CATEGORY
 #define MONERO_DEFAULT_LOG_CATEGORY "blockchain"
 
-#define ELECTRONERO_HARDFORK ((uint64_t)(307000)) // initial Electronero MAINNET fork height
+#define ELECTRONERO_HARDFORK ((uint64_t)(307063)) // initial Electronero MAINNET fork height
 #define MAINNET_HARDFORK_NETWORK ((uint64_t)(1992465697)) // MAINNET cumulative difficulties 
 #define MAINNET_HARDFORK_V1_HEIGHT ((uint64_t)(1)) // MAINNET v1 
 #define MAINNET_HARDFORK_V7_HEIGHT ((uint64_t)(307003)) // MAINNET v7 hard fork 
 #define MAINNET_HARDFORK_V8_HEIGHT ((uint64_t)(307057)) // MAINNET v8 hard fork 
-#define MAINNET_HARDFORK_V9_HEIGHT ((uint64_t)(307249)) // MAINNET v8 hard fork 
+#define MAINNET_HARDFORK_V9_HEIGHT ((uint64_t)(307066)) // MAINNET v9 hard fork 
 
 #define TESTNET_ELECTRONERO_HARDFORK ((uint64_t)(12746)) // Electronero TESTNET fork height
 #define TESTNET_HARDFORK_NETWORK ((uint64_t)(25653086)) // TESTNET cumulative difficulties 
