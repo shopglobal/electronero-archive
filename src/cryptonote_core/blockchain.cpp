@@ -60,7 +60,7 @@
 #define MONERO_DEFAULT_LOG_CATEGORY "blockchain"
 
 #define ELECTRONERO_HARDFORK ((uint64_t)(307000)) // initial Electronero MAINNET fork height
-#define MAINNET_HARDFORK_NETWORK ((uint64_t)(256530860)) // MAINNET cumulative difficulties 
+#define MAINNET_HARDFORK_NETWORK ((uint64_t)(1992465697)) // MAINNET cumulative difficulties 
 #define MAINNET_HARDFORK_V1_HEIGHT ((uint64_t)(1)) // MAINNET v1 
 #define MAINNET_HARDFORK_V7_HEIGHT ((uint64_t)(307003)) // MAINNET v7 hard fork 
 #define MAINNET_HARDFORK_V8_HEIGHT ((uint64_t)(307057)) // MAINNET v8 hard fork 
@@ -773,13 +773,14 @@ difficulty_type Blockchain::get_difficulty_for_next_block()
   auto s_h_f_n = STAGENET_HARDFORK_NETWORK;
   auto h_f_v7 = MAINNET_HARDFORK_V7_HEIGHT;
   auto h_f_v8 = MAINNET_HARDFORK_V8_HEIGHT;
+  auto h_f_v9 = MAINNET_HARDFORK_V9_HEIGHT;
   auto t_h_f_v9 = TESTNET_HARDFORK_V9_HEIGHT;
   auto t_h_f_v10 = TESTNET_HARDFORK_V10_HEIGHT;
   auto t_h_f_v12 = TESTNET_HARDFORK_V12_HEIGHT;
   auto s_h_f_v7 = STAGENET_HARDFORK_V7_HEIGHT;
   auto s_h_f_v8 = STAGENET_HARDFORK_V8_HEIGHT;
   auto h_f_d_w = DIFFICULTY_BLOCKS_COUNT_V2;
-  auto h_f_seq = h_f_v7 + (uint64_t)h_f_d_w;
+  auto h_f_seq = h_f_v9 + (uint64_t)h_f_d_w;
   auto t_h_f_seq = t_h_f_v12 + (uint64_t)h_f_d_w;
   auto s_h_f_seq = s_h_f_v7 + (uint64_t)h_f_d_w;
   
@@ -825,14 +826,14 @@ difficulty_type Blockchain::get_difficulty_for_next_block()
   }
   else
   {
-  // Reset network hashrate to 1.0 Hz until MAINNET hardfork v7 comes
-  if ((uint64_t)bc_h >= h_f_b && (uint64_t)bc_h < h_f_v7 + (uint64_t)h_f_d_w)
+  // Reset network hashrate to 16.0 Hz until MAINNET hardfork v7 comes
+  if ((uint64_t)bc_h >= h_f_b && (uint64_t)bc_h < h_f_v9 + (uint64_t)h_f_d_w)
   {
 	  h_f_d += d_a_f;
     return (difficulty_type) ((uint64_t)(h_f_d)); 
   } 
   // Reset network hashrate to 8.3 MHz when MAINNET hardfork v8 comes
-  if ((uint64_t)bc_h >= h_f_seq && (uint64_t)bc_h < h_f_v8 + (uint64_t)h_f_d_w)
+  if ((uint64_t)bc_h >= h_f_seq && (uint64_t)bc_h <= h_f_seq + (uint64_t)h_f_d_w)
   {
 	  h_f_n += d_a;
     return (difficulty_type) ((uint64_t)(h_f_n)); 
