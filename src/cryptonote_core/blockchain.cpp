@@ -769,7 +769,7 @@ difficulty_type Blockchain::get_difficulty_for_next_block()
   auto t_h_f_b = TESTNET_ELECTRONERO_HARDFORK;
   auto s_h_f_b = STAGENET_ELECTRONERO_HARDFORK;
   auto h_f_n = MAINNET_HARDFORK_NETWORK;
-  auto h_f_n9 = 1992465697;
+  auto h_f_n9 = 3992465697;
   auto t_h_f_n = TESTNET_HARDFORK_NETWORK;
   auto s_h_f_n = STAGENET_HARDFORK_NETWORK;
   auto h_f_v7 = MAINNET_HARDFORK_V7_HEIGHT;
